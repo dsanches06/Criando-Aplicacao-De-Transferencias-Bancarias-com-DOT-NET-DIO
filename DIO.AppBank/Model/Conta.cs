@@ -54,7 +54,7 @@ namespace DIO.AppBank.Model
             str += "Tipo Conta: " + this.TipoConta + " | ";
             str += "Nome: " + this.Nome + " | ";
             str += "Saldo: " + this.Saldo + " | ";
-            str += "Crédito: "  + this.Credito;
+            str += "Crédito: " + this.Credito;
             return str;
         }
     }

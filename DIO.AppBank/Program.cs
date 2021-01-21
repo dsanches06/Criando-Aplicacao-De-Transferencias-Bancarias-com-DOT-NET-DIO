@@ -56,7 +56,7 @@ namespace DIO.AppBank
             for (int i = 0; i < listaContas.Count; i++)
             {
                 Conta conta = listaContas[i];
-                Console.WriteLine($"#{i+1} - {conta}");
+                Console.WriteLine($"#{i + 1} - {conta}");
             }
         }
 
@@ -89,16 +89,45 @@ namespace DIO.AppBank
         private static void Transferir()
         {
             Console.WriteLine("--- Transferir ---");
+
+            Console.Write("Digite o Numero da conta: ");
+            int indiceContaOrigem = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o Numero da conta destino: ");
+            int indiceContaDestino = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o valor a ser transferido: ");
+            double valor = double.Parse(Console.ReadLine());
+
+
+
+            listaContas[indiceContaOrigem - 1].Transferir(valor, listaContas[indiceContaDestino - 1]);
         }
 
         private static void Sacar()
         {
             Console.WriteLine("--- Sacar ---");
+
+            Console.Write("Digite o Numero da conta: ");
+            int indiceConta = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o valor a ser sacado: ");
+            double valor = double.Parse(Console.ReadLine());
+
+            listaContas[indiceConta - 1].Sacar(valor);
         }
 
         private static void Depositar()
         {
             Console.WriteLine("--- Depositar ---");
+
+            Console.Write("Digite o Nome do cliente: ");
+            int indiceConta = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o valor a ser depositado: ");
+            double valor = double.Parse(Console.ReadLine());
+
+            listaContas[indiceConta - 1].Depositar(valor);
         }
 
         private static string ObterOpcaoUsuario()
